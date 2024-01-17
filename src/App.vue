@@ -1,10 +1,26 @@
 <template>
    <div>
      
+
+    <h1 :class="{'title':true, 'title-home': isHome}">
+      Curso Vue 3
+
+    </h1>
+
+
+    <p :class="pClass">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus laborum ducimus quas, repudiandae veritatis officiis nostrum! Reprehenderit fuga aliquid, fugit suscipit dolor neque illo perspiciatis numquam expedita. Error, maiores corrupti.
+    </p>
      
+
+
+    <p :style="styleClass">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. In totam, assumenda vel facilis consectetur rerum inventore facere animi voluptates cumque ducimus sunt corporis voluptatum numquam aspernatur sed! Veniam, quaerat dolores.
+    </p>
+
      <div
      v-for="obj in todos"
-     v-bind:key="obj.id"
+     :key="obj.id"
      class="todos-items"
      >
      
@@ -69,7 +85,10 @@ data(){
     lastName:'Snow',
     showName: false,
     acessLevel: 'marketing',
-  
+    classVar: 'title',
+    pClass: ['text','text-home'],
+    isHome: false,
+    styleClass: {color:'aqua', backgroundColor:'black', fontSize: '20px'},
  
     todos: [
   {
@@ -104,8 +123,7 @@ data(){
     "id": 5,
     "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
     "completed": false
-  }
-]
+  }]
     
 
 
@@ -116,6 +134,24 @@ data(){
 </script>
 
 <style>
+
+
+.title{
+  font-size: 20px ;
+  color:blue;
+}
+.title-home{
+  font-size: 40px;
+  color:green;
+}
+.text{
+  color:gray
+}
+
+.text-home{
+  color: chartreuse;
+}
+
 .todos-items{
   background-color: black;
   margin: 0 0 5px 0;
