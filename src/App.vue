@@ -1,6 +1,81 @@
 <template>
    <div>
      
+    <div>
+      Two-way data bindindg
+    </div>
+
+    <br><br>
+<label for="">Nome</label>
+<br>
+    <input 
+    v-model="nameModel"
+    type="text"
+    
+    >
+    <br>
+
+    {{ nameModel }}
+<br><br>
+    <div>
+      <label for="">Sports bet</label><br>
+      <select v-model="sports">
+        <option value="">Escolha</option>
+        <option value="futebol">futebol</option>
+        <option value="basket">basket</option>
+        <option value="skate">skate</option>
+        <option value="tenis">tenis</option>
+      </select>
+      <br>
+      {{ sports }}
+    </div>
+
+
+
+
+
+    <div>
+      <br><br><br>
+      <label for="">Newsletter</label><br>
+      <input 
+       v-model="newsletter" type="radio" value="sim">sim
+      <input 
+        v-model="newsletter" type="radio" value="nao">nao
+    </div>
+<br>
+{{ newsletter }}
+<br><br><br><br>
+
+
+<div>
+      <br><br><br>
+      <label for="">Contrato</label><br>
+      <input 
+       v-model="contratos" type="checkbox" value="sim">Aceita nosso contrato
+     <br>
+       {{ contratos }}
+    </div>
+
+
+
+    <div>
+      <br><br><br>
+      <label for="">Escolha a cor que você gosta</label><br>
+      <input 
+       v-model="colors" type="checkbox" value="azul">Azul
+
+       <input 
+       v-model="colors" type="checkbox" value="amarelo">Amarelo
+     <br>
+       {{ colors }}
+    </div>
+
+
+
+
+
+
+
 
     <h1 :class="{'title':true, 'title-home': isHome}">
       Curso Vue 3
@@ -80,6 +155,10 @@ export default {
   },
 data(){
   return{
+    colors:[],
+    contratos:false,
+    nameModel:'jozi',
+    newsletter:'',
     showHeader:true,
     name:'Jon',
     lastName:'Snow',
@@ -89,7 +168,10 @@ data(){
     pClass: ['text','text-home'],
     isHome: false,
     styleClass: {color:'aqua', backgroundColor:'black', fontSize: '20px'},
- 
+    sports: 'futebol',
+
+
+
     todos: [
   {
     "userId": 1,
